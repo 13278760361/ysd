@@ -1,0 +1,329 @@
+
+.aui-searchbar{position: relative;}
+.course-list{
+    height: 4.5rem;
+    margin:0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 0px solid #000;
+    background: #FFF;
+    border-radius: 5px;
+    position: relative;
+    left: auto;
+    top: auto;
+    box-shadow: 0px 1px 2px 1px #B2B2B2;
+/*    background-image: url("../image/Bitmap.png");*/
+}
+.course-list img{
+    width:1rem;
+    height:1rem;
+    position:absolute;
+    left:-0.5rem; 
+    top:1.6rem;
+
+}
+.course-name{
+    font-size: 14px;
+    height:2.5rem;
+    line-height:2.5rem;
+    font-weight: 600;
+    border-bottom: 1px solid #EFEFEF;
+    text-indent: 1rem;
+}
+.course-info-box{
+   height: 4.5rem;
+   border-right: solid #EFEFEF 1px; 
+}
+.course-info{
+    height: 2rem;
+    text-indent: 1rem;
+}
+.course-time,.study-time{height: 2rem;line-height: 2rem;font-size: 12px;color:#858a95;}
+.study-time{padding-right:1.2rem;margin-right: 1rem; 
+}
+.down{background: url("../image/down.svg") no-repeat right center;background-size: 12px;}
+.up{background: url("../image/up.svg") no-repeat right center;background-size: 12px;}
+
+.course-btn{
+    height: 4.5rem;
+    background: #F7F7F7;
+    border-radius:5px;
+}
+.course-btn label{
+    display: block;
+    height: 1.2rem;
+    line-height: 1.4rem;
+    font-size: 14px;
+    margin-top: 1.8rem;
+    text-align: center;
+}
+.course-detail{
+    display: none;
+    margin:0.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    background: #FFF;
+    border-radius:5px;
+    box-shadow: 0px 1px 2px 1px #B2B2B2;
+    padding:0.5rem 0;
+    text-align: right;
+}
+.course-detail p{
+    width: 100%;
+    height: 1.2rem;
+    text-align: right;
+    line-height: 1rem;
+    font-size: 14px;
+    color: #4A4A4A;
+    padding: 0.2rem;
+}
+.course-detail p span{color:#D6253A;}
+.search-input{
+    margin: 0 0.5rem;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+    padding-left: 0.5rem;
+    display: -webkit-box;
+    -webkit-box-flex: 1;
+    box-shadow: 0px 1px 2px 1px #B2B2B2;
+}
+.search-input input{
+    color: #666666;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 1.6rem;
+    min-height: 1.6rem;
+    line-height: 1.6rem;
+    border: 0;
+    -webkit-appearance: none;
+    font-size: 14px;
+    margin-top: 0.2rem;
+}
+.search-input i{font-size: 14px;}
+.selected-list{
+            position: fixed;
+            width: 100%;
+            height: 3.5rem;
+            bottom: 0;
+            left: 0;
+            background: #FFF;
+            border-top: 1px solid #CACACA;
+            z-index: 999;
+            box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+            visibility:hidden;
+        }
+        .selected-list-btn{
+            width: 6rem;
+            height: 3.5rem;
+            background: #09BB07;
+            color: #FFF;
+            line-height: 3.5rem;
+            text-align: center;
+            float: right;
+        }
+        .selected-list-detail{
+            height: 3.5rem;
+            line-height: 3.5rem;
+            text-indent: 0.5rem; 
+            float: left;
+        }
+.my-center-logo{
+            width:6rem;
+            height:6rem;
+            border-radius: 4rem;
+            background-color: #FFF;
+            margin: 0 auto;
+            margin-top: 2.6rem;
+            overflow: hidden;
+        }
+.my-center-logo img{width: 6rem;height:6rem;}
+        .form-list{margin-top: 3.6rem;}
+        .form-list-item {
+            background: rgba(255,255,255,0.3);
+            width:80%;
+            height:3.2rem;
+            border-radius: 5rem;
+            padding: 0.5rem 0.8rem;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+        }
+
+        .form-list-input{width: 90%;}
+        .form-list-item i{color: #FFF;font-size: 14px;font-weight: 600;line-height:2rem;}
+        .form-list-item input{display: block; height:12px; width: 100%;color: #FFF;font-size: 14px;}
+    .bind-btn{
+       background: #09BB07;
+        width:80%;
+        height:3.2rem;
+        line-height:2.4rem;
+        letter-spacing:6px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 5rem;
+        padding: 0.5rem 0.8rem;
+        margin: 0 auto;
+        margin-bottom: 1rem; 
+    }
+
+.bind-btn{
+       background: #09BB07;
+        width:80%;
+        height:3.2rem;
+        line-height:2.4rem;
+        letter-spacing:6px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 5rem;
+        padding: 0.5rem 0.8rem;
+        margin: 0 auto;
+        margin-bottom: 1rem; 
+    }
+.bottom-menu{
+    width: 100%;
+    height: 3rem;
+    background: #FFF;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 90;
+    border-top:1px solid #CBCBCB;
+}  
+.bottom-menu div{
+    text-align: center;
+    line-height: 3rem;
+    border-right: 1px solid #CBCBCB;
+}
+.bottom-menu div:last-child{
+    border-right:none;
+}
+.bottom-menu .index-menu{
+    height: 3rem;
+    background: url("../image/home.svg") no-repeat center;
+    background-size: 20px;
+}
+.bottom-menu .sign-menu{
+    background: url("../image/menu.svg") no-repeat 10px 0.9rem;
+    background-size: 16px;
+}
+.bottom-menu .menu-list a{color: #4A4A4A;}
+.sign-menu{
+            position: relative;
+        }
+        .menu-list #sign-menu,.menu-list #sign-menu div{border-right:none;}
+        .sing-menu-list{
+            width:6rem;
+            height: 6rem;
+            padding: 0 1rem;
+            background: #FFF;
+            border-radius: 0.2rem;
+            position: absolute;
+            left: 0.5rem;
+            top:-6.4rem;
+            border-right: none;
+            display: none;
+        }
+        .sing-menu-list:after{
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 0.4rem solid transparent;
+            border-right: 0.4rem solid transparent;
+            border-top: 0.8rem solid #FFF;
+            position: absolute;
+            bottom: -0.5rem;
+            left: 2.6rem;
+        }
+        .sing-menu-list p{
+            font-size: 12px;
+            border-bottom: 1px solid #C9C9C9;
+        }
+        .sing-menu-list p:last-child{border-bottom: none;}
+
+.sign-menu{
+            position: relative;
+        }
+        .menu-list #sign-menu,.menu-list #sign-menu div{border-right:none;}
+        .sing-menu-list{
+            width:6rem;
+            height: 6rem;
+            padding: 0 1rem;
+            background: #FFF;
+            border-radius: 0.2rem;
+            position: absolute;
+            left: 0.5rem;
+            top:-6.4rem;
+            border-right: none;
+            display: none;
+        }
+        .sing-menu-list:after{
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 0.4rem solid transparent;
+            border-right: 0.4rem solid transparent;
+            border-top: 0.8rem solid #FFF;
+            position: absolute;
+            bottom: -0.5rem;
+            left: 2.6rem;
+        }
+        .sing-menu-list p{
+            font-size: 12px;
+            border-bottom: 1px solid #C9C9C9;
+        }
+        .sing-menu-list p:last-child{border-bottom: none;}
+
+/*字体部分*/
+@font-face {font-family: "myfont";
+  src: url('myfont.ttf') format('truetype');
+}
+
+.myfont {
+  font-family:"myfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-xingbie:before { content: "\e6c6"; }
+.icon-edu-line:before { content: "\e6f1"; }
+/*重写AUI部分*/
+.aui-searchbar{height: 3rem;}
+.aui-searchbar .aui-searchbar-cancel{font-size: 14px;}
+.my-checkbox:checked,
+.my-checkbox.aui-checked {
+    background-color: #F5A623;
+    border: solid 1px #F5A623;
+    text-align: center;
+    background-clip: padding-box;
+    box-shadow:-0.2px 0.5px 0px #684C1D;
+}
+.my-checkbox {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: #ffffff;
+    border: solid 1px #dddddd;
+    -webkit-border-radius: 0.6rem;
+    border-radius: 0.6rem;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    cursor: default;
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-transition: background-color ease 0.1s;
+    transition: background-color ease 0.1s;
+    margin-right: 0.2rem;
+
+    box-shadow:inset 1px 1px 2px #A8A8A8;
+    background: #DCDCDD;
+}

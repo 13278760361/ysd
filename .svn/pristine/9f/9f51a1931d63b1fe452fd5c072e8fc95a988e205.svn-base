@@ -1,0 +1,45 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>编辑课程</h2>
+    </div>
+    <form action="{:U('Subjects/edit')}" method="post" class="form-horizontal">
+    <input type="hidden" name="id" value="{$data['id']}"/>
+        <div class="form-item">
+            <label class="item-label">课程名称</label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="subject_name" value="{$data['subject_name']}">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">课程总学分<span class="check-tips">（该课程的总学分,只填入数字）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" style="IME-MODE: disabled;" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="5" size="14" value="{$data['subject_score']}" name="subject_score">分
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">课程总学时<span class="check-tips">（一学期总课数,如：一个学期总共上30节课,这里就填30）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" style="IME-MODE: disabled;" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="5" size="14" value="{$data['subject_time']}" name="subject_time"/>节课
+            </div>
+        </div>
+
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Subjects/index')}');
+
+       
+    </script>
+</block>

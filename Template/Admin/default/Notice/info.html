@@ -1,0 +1,78 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>通知详情</h2>
+    </div>
+    
+        
+
+
+   <!--  <form action="{:U('Notice/sendMsg')}" method="post" class="form-horizontal"> -->
+
+    <div class="form-item">
+            <label class="item-label">标题<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-big" name="title" value="{$info.title}" disabled="">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">发送者<span class="check-tips"></span></label>
+            <div class="controls">
+                  <input type="text" class="text input-big"  name="sender" value="{$info.sender}" disabled="">
+            </div>
+        </div>
+
+           <div class="form-item">
+            <label class="item-label">接收者<span class="check-tips"></span></label>
+            <div class="controls">
+                  <input type="text" class="text input-big"  name="sender" value="{$info.username}" disabled="">
+            </div>
+        </div>
+
+
+
+
+        <br/><font color="red">以下为模版格式</font><hr/>
+
+        <volist name="datafrom" id="vo"> 
+
+         <div class="form-item">
+                    <label class="item-label">{$vo.title}<span class="check-tips"></span></label>
+                    <div class="controls">
+                         
+             
+                          <input type="text" class="text input-big"  name="sender" value="{$vo['key']['value']}"  disabled="">
+                          
+                    </div>
+                </div>
+        
+        
+    
+        </volist>
+
+
+   
+       
+   
+
+      
+
+       <!--  <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">发 送</button>
+            
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div> -->
+ <!--    </form> -->
+</block>
+<block name="script">
+
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Notice/index')}');
+       
+    </script>
+</block>
+
+

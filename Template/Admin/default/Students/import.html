@@ -1,0 +1,41 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>批量导入学生</h2>
+    </div>
+   <form id="form" action="{:U('Students/import')}" method="post" enctype="multipart/form-data" class="form-horizontal form-center">
+
+       <div class="form-item">
+       <label class="item-label">导入格式<span class="check-tips">（请按此格式填写Excel表格）</span></label>
+            <div class="controls">
+          <img src="__ROOT__/Public/Admin/images/import_students.png" style="width: 350px;"/>
+            </div>
+        </div>
+
+
+       <div class="form-item">
+       <label class="item-label">导入学生<span class="check-tips">（请以结尾为<i style="color:red;font-style: normal;">.xls</i>的Excel文件导入）</span></label>
+            <div class="controls"><br/>
+             <input type="file" name="import" style="border: 0px;"/>
+            </div>
+        </div>
+
+
+<br/>
+        <div class="form-item">
+            <button class="btn submit-btn" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Students/index')}');
+
+       
+    </script>
+</block>

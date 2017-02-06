@@ -1,0 +1,87 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>报表导出</h2>
+    </div>
+    <form action="{:U('Admin/SubjectsExp/exp_students_subject')}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">课程名称</label>
+            <div class="controls">
+            <select name="subject_id" id="subject_id">
+				<option name="" value="0">请选择</option>
+				<volist name="sb_list" id="vo">
+					<option name="" value="{$vo.id}">{$vo.subject_name}</option>
+				</volist>
+            </select>
+                <!-- <input type="text" class="text" name="subject_name"> -->
+            </div>
+        </div>
+
+        
+		<div class="form-item">
+            <label class="item-label">班级名称</label>
+            <div class="controls">
+            <select name="years_id" id="years_id">
+				<option name="" value="0" >请选择年份</option>
+				<volist name="year_list" id="vo">
+					<option name="" value="{$vo.id}">{$vo.year_name}</option>
+				</volist>
+            </select>
+                <!-- <input type="text" class="text" name="subject_name"> -->
+                <select name="class_id" id="class_id">
+				<option name="" value="0" >请选择班级</option>
+				
+            </select>
+            </div>
+        </div>
+        <div class="form-item">
+            <a class="btn submit-btn" href="javascript:;" onclick="exp()" id="sb_exp">确认导出</a>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+            
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Subjects/index')}');
+
+		$(function(){
+
+			  $('#years_id').change(function(){
+
+					var html = "";
+					if($(this).val()>0){
+						
+					   $.get("/admin.php?s=SubjectsExp/class_list/year_id/"+$(this).val(),function(data,status){
+
+					   		var json = eval(data);
+					   		$.each(json, function (index, item) {  
+				                // 循环获取数据    
+				                 var id = json[index].id;  
+				                 var class_name = json[index].class_name;  
+				                 html+="<option name='' value='"+id+"'>"+class_name+"</option>";     
+				            });
+				           $("#class_id").html(html);
+					   });
+					}else{
+						 html+="<option name='' value='0'>请选择班级</option>"; 
+						 $("#class_id").html(html);
+					}
+
+			  })
+
+		});
+       function exp(){
+			if($("#subject_id").val()!=0){
+	       		$("#sb_exp").attr("href","/admin.php?s=SubjectsExp/exp_students_subject/subject_id/"+$('#subject_id').val()+"/class_id/"+$('#class_id').val());
+	       }else{
+	       		alert("请选择课程");
+	       		return false;
+	       }
+       }
+
+    </script>
+</block>

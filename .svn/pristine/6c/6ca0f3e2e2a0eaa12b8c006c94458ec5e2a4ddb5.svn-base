@@ -1,0 +1,71 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>编辑签到信息</h2>
+    </div>
+    <form action="{:U('Sign/edit')}" method="post" class="form-horizontal">
+    <input type="hidden" name='user_id' value="{$user_id}"/>
+    <input type="hidden" name='class_hour_id' value="{$class_hour_id}"/>
+        
+       <div class="form-item">
+            <label class="item-label">用户名</label>
+        <input type="text" name="username"  value="{$username}" disabled="" />
+       </div>
+
+         <div class="form-item">
+            <label class="item-label">课程名称</label>
+        <input type="text" name="subject_name"  value="{$subject_info.subject_name}" disabled="" />
+       </div>
+
+         <div class="form-item">
+            <label class="item-label">上下课时间</label>
+        <input size="40" type="text" name="subject_name"  value="{$subject_info.start_time|date='Y-m-d H:i:s',###} --{$subject_info.end_time|date='Y-m-d H:i:s',###}" disabled="" />
+       </div>
+
+       <div class="form-item">
+            <label class="item-label">上课签到时间</label>
+        <input type="text" name="start_time" class="text time" value="{$s_sign_time|date='Y-m-d H:i:s',###}" placeholder="请选择时间" />
+       </div>
+
+       <div class="form-item">
+            <label class="item-label">下课签到时间</label>
+        <input type="text" name="end_time" class="text time" value="{$e_sign_time|date='Y-m-d H:i:s',###}" placeholder="请选择时间" />
+       </div>
+
+      
+
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+<block name="script">
+<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Sign/index')}');
+$(function(){
+        $('.date').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    $('.time').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        language:"zh-CN",
+        minView:0,
+        startView:2,
+        autoclose:true
+    });
+})
+       
+    </script>
+</block>

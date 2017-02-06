@@ -1,0 +1,161 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>发送通知</h2>
+    </div>
+    
+        
+       <form id="tplpost" name="tplpost" action="{:U('add')}" method="post">
+
+        
+                 <div class="form-item">
+                    <label class="item-label">模版选择</label>
+                     <div class="controls">
+                        <select name="id" id="tpl">
+                            <option value="">请选择模版</option>
+                            <volist name="tpls" id="vo">
+                                  <option value="{$vo.id}" <if condition="$curr_template eq $vo['id']">selected</if>>{$vo.title}</option>
+                            </volist>
+                        </select>
+                      </div>  
+                    <a href="{:U('Notice/refreshTmp')}">刷新模版</a>
+                </div>
+      
+       </form> 
+
+
+    <form action="{:U('Notice/sendMsg')}" method="post" class="form-horizontal">
+
+    <div class="form-item">
+            <label class="item-label">标题<span class="check-tips"></span></label>
+            <div class="controls">
+                <input type="text" class="text input-big"   name="title">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">发送者<span class="check-tips"></span></label>
+            <div class="controls">
+                  <input type="text" class="text input-big"   name="sender">
+            </div>
+        </div>
+
+         <div class="form-item">
+            <label class="item-label">接收者<span class="check-tips"></span></label>
+            <div class="controls">
+                <ul id="treeDemo" class="ztree"></ul>
+            </div>
+        </div>
+        <input id="rules" name="all_id" type="hidden" />
+    
+    <volist name="datafrom" id="vo"> 
+       <div class="form-item">
+            <label class="item-label">{$vo.title}</label>
+            <input type="hidden"  name="body[{$key}][title]" value="{$vo.title}" >
+                <input type="hidden"  name="body[{$key}][key]" value="{$vo.key.key}" >
+                <input type="text" class="text input-large" name="body[{$key}][value]" value="{$vo.key.value}" placeholder="{$vo.key.placeholder}" <if condition="$vo['key']['key'] eq 'template_id'"> readonly="true" </if>>
+       </div>
+    </volist>
+
+    <volist name="commefrom" id="vo"> 
+       <div class="form-item">
+            <label class="item-label">{$vo.title}</label>
+                <input type="text" class="text input-large" name="commefrom[{$vo.key.key}]" value="{$vo.key.value}" placeholder="{$vo.key.placeholder}" <if condition="$vo['key']['key'] eq 'template_id'"> readonly="true" </if>>
+       </div>
+    </volist>
+
+      
+
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">发 送</button>
+            
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+<block name="script">
+<!-- 节点树加载项 -->
+<!--  <link rel="stylesheet" href="__STATIC__/ztree/demo.css" type="text/css"> -->
+ <link rel="stylesheet" href="__STATIC__/ztree/metroStyle/metroStyle.css" type="text/css">
+ <script type="text/javascript" src="__STATIC__/ztree/jquery.ztree.core-3.5.js"></script>
+ <script type="text/javascript" src="__STATIC__/ztree/jquery.ztree.excheck-3.5.js"></script>
+<!-- 节点树加载项 -->
+
+<!-- 节点树加载项 -->
+<SCRIPT type="text/javascript">
+        <!--
+        var setting = {
+            view: {
+                selectedMulti: false
+            },
+            check: {
+                enable: true,
+                autoCheckTrigger: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            callback: {
+                // beforeCheck: beforeCheck,
+                onCheck: onCheck
+            }
+        };
+        var zNodes ;
+        $(function(){
+                $.ajax({
+                async : false,
+                cache:false,
+                type: 'POST',
+                dataType : "json",
+                url: "{:U('Notice/getData')}",
+                error: function () {
+                alert('请求失败');
+                },
+                success:function(data){ 
+               
+                zNodes = data;
+               
+                }
+        });
+
+
+
+});
+
+
+        function onCheck(e, treeId, treeNode) {
+            
+
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+            nodes = zTree.getCheckedNodes(true);
+
+            var rules=[];
+         
+            for (var i=0, l=nodes.length; i<l; i++) {
+                rules.push(nodes[i].id);
+            }
+            //alert(rules);
+            $("#rules").val(rules);
+           
+        }       
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        });
+        //-->
+</SCRIPT>
+
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Notice/index')}');
+        $('#tpl').change(function(){
+            $("#tplpost").submit();
+        }) 
+       
+    </script>
+</block>
+
+

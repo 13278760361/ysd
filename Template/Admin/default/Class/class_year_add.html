@@ -1,0 +1,51 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>添加年份</h2>
+    </div>
+    <form action="{:U('Class/class_year_add')}" method="post" class="form-horizontal">
+
+        <div class="form-item">
+            <label class="item-label">年份<span class="check-tips">（选择年份）</span></label>
+            <div class="controls">
+                <input type="text" name="year" style="IME-MODE: disabled;" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="4" size="14" class="text date" placeholder="请选择时间" />
+            </div>
+        </div>
+       
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Class/class_years')}');
+$(function(){
+        $('.date').datetimepicker({
+        format: 'yyyy',
+        language:"zh-CN",
+        startView: 4,  
+        minView:4,
+        autoclose:true
+    });
+    $('.time').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        language:"zh-CN",
+        minView:0,
+        startView:2,
+        autoclose:true
+    });
+})
+       
+    </script>
+</block>

@@ -1,0 +1,100 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>编辑学生</h2>
+    </div>
+    <form action="{:U('Students/edit')}" method="post" class="form-horizontal">
+               <input type="hidden" name="id" value="{$data['id']}" />
+        <div class="form-item">
+            <label class="item-label">姓名<span class="check-tips">（学生名字）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="username" value="{$data['username']}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">头像<span class="check-tips">（学生头像）</span></label>
+            <div class="controls">
+            <img src="{$data['headimgurl']}__ROOT__/Public/Admin/images/1.jpg" style="width: 100px;height: 100px;"/>
+            </div>
+        </div>         
+        <div class="form-item">
+            <label class="item-label">性别<span class="check-tips">（学生性别）</span></label>
+            <select name="sex">
+                <option value="0" <eq name="data.sex" value="0">selected</eq>>女</option>
+                <option value="1" <eq name="data.sex" value="1">selected</eq>>男</option>
+            </select> 
+        </div>        
+        <div class="form-item">
+            <label class="item-label">学号<span class="check-tips">（学生学号）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="student_no" value="{$data['student_no']}">
+            </div>
+        </div>  
+        <div class="form-item">
+            <label class="item-label">班级<span class="check-tips">（学生班级）</span></label>
+            <select name="year_id" id="year" onchange="YearChange()">
+              <option>请选择</option>
+             <foreach name="year" item="v">
+                <option value="{$v['id']}" <if condition="$data['year_id'] eq $v['id']">selected</if>>{$v['year_name']}届</option>
+
+              </foreach>  
+
+            </select> 
+
+            <select name="class_id" id="class">
+            <option>请选择</option>
+              <foreach name='class' item="v">
+                 <option value="{$v['id']}" class="year_{$v['class_year_id']}">{$v['class_name']}届</option>
+              </foreach>
+            </select>
+
+        </div>      <br/> 
+        <div class="form-item">
+            <label class="item-label">手机号码<span class="check-tips">（该学生手机号码）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="phone" value="{$data['phone']}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">地址<span class="check-tips">（地址）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="address" value="{$data['address']}">
+            </div>
+        </div>
+        <input type="hidden" value="{$data['class_id']}" id="class_id">
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Students/index')}');
+
+        $(function(){
+            if($('#class_id').val()!=''){
+               var class_id = $('#class_id').val() || 0;
+               var id = $('#year option:selected').val();
+               $.post("{:U('Students/ajax_edit')}",{class_id:class_id,year_id:id},function(data){
+                  if(data.code==1){
+                    $('#class').html(data.str);
+                  }
+               })
+            }
+        })
+
+         function YearChange(){
+               var id = $('#year option:selected').val();
+               $.post("{:U('Students/ajax_edit')}",{year_id:id},function(data){
+                  if(data.code==1){
+                    $('#class').html(data.str);
+                  }
+               })
+             } 
+    </script>
+</block>

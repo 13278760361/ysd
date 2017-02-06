@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/aui.2.0.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/aui-flex.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/sign.css" />
+    <script style="text/javascript" src="__PUBLIC__/Home/js/jquery-2.2.2.min.js"></script>
+    <title>签到系统</title>
+</head>
+<body>
+    <div class="sing-user aui-flex-row">
+        <div class="sing-user-img aui-pull-left aui-flex-item-2"> 
+            <img src="{$user_info.headimgurl}" alt="">
+        </div>
+        <div class="aui-pull-right aui-flex-col aui-flex-item-10 sing-user-info">
+            <div class="aui-flex-item-12">姓名：{$user_info.username}</div>
+            <div class="aui-flex-item-12">班级：{$user_info.year_name}{$user_info.class_name}</div>
+            <div class="aui-flex-item-12">学号：{$user_info.student_no}</div>
+            <div class="aui-flex-item-12">学分：{$user_score}/{$subject_score_sum}</div>       
+        </div>
+    </div>
+
+    <!--  课程列表开始  -->
+    <volist name="class_hour_info" id="vo">
+    <div class="course-list aui-flex-row">
+        <div class="course-name">{$vo.subject_name}（{$vo.teacher_name}/{$vo.subject_score}学分）</div>
+        <div class="rang">
+            <div class="speed"></div>
+        </div>
+        <div class="rang-tips">
+            <div class="tips-box">
+                <div class="arrow"></div>
+                <p now="{$vo.subject_time_sum}" totle="{$vo.subject_time}">{$vo.subject_time_sum}/{$vo.subject_time}</p>
+            </div>
+        </div>
+    </div>
+  </volist>  
+  <!--  课程列表结束  -->
+
+<!-- 底部菜单 -->
+ <include file="Public/footer" /> 
+<!-- 底部菜单 -->
+    <script style="text/javascript" src="__PUBLIC__/Home/js/jquery-2.2.2.min.js"></script>
+    <script>
+        
+    //初始化进度条
+        speed();
+        
+        function speed(){
+            var speed=$(".course-list");
+            for(var i=0;i<speed.length;i++){
+                var now=parseInt($(speed[i]).find("p").attr("now"));
+                var totle=parseInt($(speed[i]).find("p").attr("totle"));
+                //alert("now:"+now+"|"+totle);
+                var per=Math.round(now / totle * 10000) / 100.00 + "%";
+                //alert(per);
+                $(speed[i]).find(".speed").css('width',per);
+
+                //判断颜色/箭头类型
+                if(now<1){
+                    $(speed[i]).find(".tips-box").addClass("tips-box-c2");
+                    $(speed[i]).find(".arrow").addClass("arrow-left");
+                    $(speed[i]).find(".tips-box").css("left","0");
+                }
+                if(now==totle){
+                    $(speed[i]).find(".tips-box").addClass("tips-box-c1");
+                    $(speed[i]).find(".arrow").addClass("arrow-right");
+                    $(speed[i]).find(".tips-box").css("right","0");
+                }
+                if(now>0 && now<totle){
+                    $(speed[i]).find(".tips-box").addClass("tips-box-c1");
+                    $(speed[i]).find(".arrow").addClass("arrow-center"); 
+                    var speedObj=$(speed[i]).find(".tips-box");
+                    speedObj.css("left",per);
+                    var offset=speedObj.offset().left;
+                    speedObj.offset({
+                        left:Math.ceil(offset)-15
+                    })
+                }
+               
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

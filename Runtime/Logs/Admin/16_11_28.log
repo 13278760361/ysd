@@ -1,0 +1,1318 @@
+[ 2016-11-28T08:47:26+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-28T08:47:26+08:00 ] 127.0.0.1 /admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-28T08:47:26+08:00 ] 127.0.0.1 /admin.php?s=/Public/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-28T08:47:32+08:00 ] 127.0.0.1 /admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: lite E:\phpStudy\WWW\ysd\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `dk_member` [ RunTime:0.0120s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `dk_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dk_action` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `dk_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_action_log` [ RunTime:0.0120s ]
+SQL: INSERT INTO `dk_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','2130706433','member','1','1480294051','admin在2016-11-28 08:47登录了后台') [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dk_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined offset: 1 E:\phpStudy\WWW\ysd\Application\Common\Common\function.php 第 687 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given E:\phpStudy\WWW\ysd\Application\Common\Common\function.php 第 687 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `dk_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1480207651 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `dk_member` SET `login`=`login`+1,`last_login_time`='1480294051',`last_login_ip`='2130706433' WHERE `uid` = 1 [ RunTime:0.0030s ]
+
+[ 2016-11-28T08:47:34+08:00 ] 127.0.0.1 /admin.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%Index/index%' ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-11-28T08:47:35+08:00 ] 127.0.0.1 /admin.php?s=/Teachers/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%Teachers/index%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_teachers` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dk_teachers` WHERE `teacher_name` LIKE '%%' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`teacher_name`,`teacher_phone`,`create_time`,`update_time`,`sort` FROM `dk_teachers` WHERE `teacher_name` LIKE '%%' ORDER BY sort asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\967288625ce25696f1f9d9f1e107a38f.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-28T08:47:43+08:00 ] 127.0.0.1 /admin.php?s=/Subjects/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%Subjects/index%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: map E:\phpStudy\WWW\ysd\Application\Admin\Controller\SubjectsController.class.php 第 22 行.
+SQL: SHOW COLUMNS FROM `dk_subjects` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dk_subjects` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `id`,`subject_name`,`subject_score`,`subject_time` FROM `dk_subjects` ORDER BY id asc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: meta_title E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\e83dd026c0d5ed2e69d5af2d13b26347.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-28T08:47:49+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/index/subject_id/70.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/index%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dk_class_hour` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dk_class_hour` WHERE `subject_id` = '70' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `id`,`subject_id`,`teacher_id`,`class_room_id`,`start_time`,`end_time`,`create_time`,`update_time`,`sort`,`date`,`before`,`after` FROM `dk_class_hour` WHERE `subject_id` = '70' ORDER BY start_time asc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dk_subjects` [ RunTime:0.0060s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_teachers` [ RunTime:0.0070s ]
+SQL: SELECT `teacher_name` FROM `dk_teachers` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_class_room` [ RunTime:0.0060s ]
+SQL: SELECT `class_room_name` FROM `dk_class_room` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `teacher_name` FROM `dk_teachers` WHERE `id` = 39 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `class_room_name` FROM `dk_class_room` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `teacher_name` FROM `dk_teachers` WHERE `id` = 40 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `class_room_name` FROM `dk_class_room` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `teacher_name` FROM `dk_teachers` WHERE `id` = 40 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `class_room_name` FROM `dk_class_room` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `teacher_name` FROM `dk_teachers` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `class_room_name` FROM `dk_class_room` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `teacher_name` FROM `dk_teachers` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `class_room_name` FROM `dk_class_room` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `teacher_name` FROM `dk_teachers` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `class_room_name` FROM `dk_class_room` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `teacher_name` FROM `dk_teachers` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `class_room_name` FROM `dk_class_room` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `teacher_name` FROM `dk_teachers` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `class_room_name` FROM `dk_class_room` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `teacher_name` FROM `dk_teachers` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `class_room_name` FROM `dk_class_room` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\a04043b29fc8b9eb743d5217fa20496a.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-11-28T08:47:55+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds/subject_id/70.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dk_class_room` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`class_room_name` FROM `dk_class_room`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_teachers` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`teacher_name` FROM `dk_teachers`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_subjects` [ RunTime:0.0040s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\dff0c0b502f97f99816365e38c670545.php 第 5 行.
+NOTIC: [8] Undefined variable: data E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\dff0c0b502f97f99816365e38c670545.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-28T08:49:07+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.005000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_class_hour` [ RunTime:0.0040s ]
+SQL: INSERT INTO `dk_class_hour` (`create_time`,`teacher_id`,`class_room_id`,`subject_id`,`start_time`,`end_time`,`date`,`before`,`after`) VALUES ('1480294147','0','0','70','1480262400','1480262400','2016-11-28','0','0'),('1480294147','0','0','70','1480348800','1480348800','2016-11-29','0','0') [ RunTime:0.0050s ]
+
+[ 2016-11-28T08:49:54+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds/subject_id/70.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_class_room` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`class_room_name` FROM `dk_class_room`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_teachers` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`teacher_name` FROM `dk_teachers`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_subjects` [ RunTime:0.0020s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\dff0c0b502f97f99816365e38c670545.php 第 5 行.
+NOTIC: [8] Undefined variable: data E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\dff0c0b502f97f99816365e38c670545.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-28T08:50:06+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.006000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+
+[ 2016-11-28T08:52:10+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds/subject_id/70.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_class_room` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`class_room_name` FROM `dk_class_room`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_teachers` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`teacher_name` FROM `dk_teachers`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_subjects` [ RunTime:0.0030s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\dff0c0b502f97f99816365e38c670545.php 第 5 行.
+NOTIC: [8] Undefined variable: data E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\dff0c0b502f97f99816365e38c670545.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-28T08:52:28+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+
+[ 2016-11-28T08:53:22+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+
+[ 2016-11-28T08:53:27+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds/subject_id/70.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_class_room` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`class_room_name` FROM `dk_class_room`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_teachers` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`teacher_name` FROM `dk_teachers`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_subjects` [ RunTime:0.0020s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\dff0c0b502f97f99816365e38c670545.php 第 5 行.
+NOTIC: [8] Undefined variable: data E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\dff0c0b502f97f99816365e38c670545.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-11-28T08:53:30+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+
+[ 2016-11-28T08:58:17+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds/subject_id/70.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-28T08:59:17+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds/subject_id/70.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_class_room` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`class_room_name` FROM `dk_class_room`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_teachers` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`teacher_name` FROM `dk_teachers`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dk_subjects` [ RunTime:0.0020s ]
+SQL: SELECT `subject_name` FROM `dk_subjects` WHERE `id` = 70 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: meta_title E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\dff0c0b502f97f99816365e38c670545.php 第 5 行.
+NOTIC: [8] Undefined variable: data E:\phpStudy\WWW\ysd\Runtime\Cache\Admin\dff0c0b502f97f99816365e38c670545.php 第 125 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-11-28T08:59:21+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0040s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+
+[ 2016-11-28T09:00:13+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+
+[ 2016-11-28T09:20:50+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0170s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0040s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+
+[ 2016-11-28T09:21:08+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 159 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined offset: 8 E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 150 行.
+NOTIC: [8] Undefined offset: 8 E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 151 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 159 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+
+[ 2016-11-28T09:34:05+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+
+[ 2016-11-28T09:34:17+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+
+[ 2016-11-28T09:35:15+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+
+[ 2016-11-28T09:36:20+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+
+[ 2016-11-28T09:36:39+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+
+[ 2016-11-28T09:37:07+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+
+[ 2016-11-28T09:37:20+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+
+[ 2016-11-28T09:37:48+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: tmp_array E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 167 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 160 行.
+NOTIC: [8] Undefined variable: vv E:\phpStudy\WWW\ysd\Application\Admin\Controller\ClassHourController.class.php 第 161 行.
+
+[ 2016-11-28T09:40:59+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+
+[ 2016-11-28T09:41:14+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+
+[ 2016-11-28T09:41:39+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+
+[ 2016-11-28T09:45:33+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+
+[ 2016-11-28T09:45:40+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+
+[ 2016-11-28T09:46:08+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+
+[ 2016-11-28T09:47:33+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+
+[ 2016-11-28T09:48:42+08:00 ] 127.0.0.1 /admin.php?s=/ClassHour/adds.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dk_menu` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title`,`url` FROM `dk_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `pid` FROM `dk_menu` WHERE ( pid !=0 AND url like '%ClassHour/adds%' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 138 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dk_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT DISTINCT  `group` FROM `dk_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `dk_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '用户管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '教室' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '课程' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '班级' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = '考勤' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `dk_menu` WHERE `group` = ' 通知' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0000s ]
+

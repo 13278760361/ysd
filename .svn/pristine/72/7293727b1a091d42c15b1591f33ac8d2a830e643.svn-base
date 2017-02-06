@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/aui.2.0.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/aui-flex.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/sign.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/UIPickerView.css">
+    <script style="text/javascript" src="__PUBLIC__/Home/js/jquery-2.2.2.min.js"></script>
+    <script style="text/javascript" src="__PUBLIC__/Home/js/common.js"></script>
+    <script style="text/javascript" src="__PUBLIC__/static/layer/layer.js"></script>
+    <title>个人中心</title>
+    <style>
+        body{
+            background:url("__PUBLIC__/Home/image/bg.png");
+            background-size: cover;
+            height: 100%;
+            overflow: hidden;
+        }
+        .title{
+            width: 80%;
+            margin: 0 auto;
+            height: 5rem;
+            margin-top: 2.6rem;
+        }
+        .title h1{font-size: 1.5rem;color: #FFF;margin-bottom: 15px;}
+        .title p{font-size: 1rem;color: #FFF;}
+        .bind-btn{color: #FFF;line-height: }
+        ::-webkit-input-placeholder { /* WebKit browsers */ color: #FFF; } 
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color: #FFF; } 
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */ color: #FFF; } 
+        :-ms-input-placeholder { /* Internet Explorer 10+ */ color: #FFF;} 
+        .course-icon {
+                background: url("__PUBLIC__/Home/image/course.svg") no-repeat left center;
+                background-size: 18px;
+            }
+        .number-icon{
+            background:url('__PUBLIC__/Home/image/number.svg') no-repeat left center;background-size: 18px;}
+
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>绑定</h1>
+        <p>首次登录请完善个人信息，填写后不可更改！</p>
+    </div>
+    <div class="form-list">
+        <ul>
+            <li class="form-list-item aui-flex-col">
+                <div class="aui-flex-item-1 aui-pull-left">
+                    <i class="aui-iconfont aui-icon-lock "></i>
+                </div>
+                <div class="aui-pull-left aui-flex-item-11" >
+                    <input type="text" value="" placeholder="姓名" info="username">
+                </div>
+                
+            </li>
+            
+            <li class="form-list-item aui-flex-col">
+                <div class="aui-flex-item-1 aui-pull-left">
+                    <i class="aui-iconfont aui-icon-phone "></i>
+                </div>
+                <div class="aui-pull-left aui-flex-item-11"  >
+                    <input type="text" value="" placeholder="电话号码" info="phone">
+                </div>
+            </li>
+            <li class="form-list-item aui-flex-col" id="choice-course">
+                    <div class="aui-flex-item-1 aui-pull-left course-icon"></div>
+                    <div class="aui-pull-left aui-flex-item-11" >
+                        <input type="text" value="" placeholder="请选择班级" disabled="disabled" id="className">
+                        <input type="hidden" value="" id="classID" info="class_id">
+                    </div>
+                </li>
+            <li class="form-list-item aui-flex-col">
+                <div class="aui-flex-item-1 aui-pull-left number-icon">
+                    
+                </div>
+                <div class="aui-pull-left aui-flex-item-11"  > 
+                    <input type="text" value="" placeholder="学号" info="student_no">
+                </div>
+            </li>
+            <!-- <li class="form-list-item aui-flex-col">
+                <div class="aui-flex-item-1 aui-pull-left">
+                    <i class="aui-iconfont aui-icon-location"></i>
+                </div>
+                <div class="aui-pull-left aui-flex-item-11" >
+                    <input type="text" value="" placeholder="工作单位" info="address">
+                </div>
+                
+            </li> -->
+        </ul>
+    </div>
+    <div class="bind-btn" poster="info" action="__SELF__">
+        绑定
+    </div>
+    <!--  班级列表 -->
+    <div class="region-picker-wrapper visibility-control" id="region-picker">
+            <div class="header">
+                <div class="bar bar-header">
+                    <div class="aui-flex-item-1" id="selectClose"></div>
+                    <div class="aui-flex-item-10 bartitle">选择班级</div>
+                    <div class="aui-flex-item-1" id="selectYes">完成</div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="select-zone top"></div>
+                <div class="select-zone middle"></div>
+                <div class="select-zone bottom"></div>
+                <div class="region-picker">
+                    <div id="provincePicker"></div>
+                </div>
+                <div class="region-picker">
+                    <div id="cityPicker"></div>
+                </div>
+            </div>
+        </div>
+   
+    <script type="text/javascript" src="__PUBLIC__/Home/js/UIPickerView.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/CAAnimation.js"></script>
+    <script>
+ var pickerCreate = document.getElementById('choice-course');
+            var up, up1, up2, animaed;
+            var selectYes = document.getElementById('selectYes');
+            var selectClose = document.getElementById('selectClose');
+            var classObject="{$classData}";
+            var classJSON = JSON.parse(UrlDecode(classObject));
+            //alert(JSON.stringify(destr));
+            var data=[{}];
+            var tmpObj=[{}];
+            var _class=new Array();
+            var slideFlag=false;
+            for(var i in classJSON){
+                //alert(i);
+                data.push({'key':i,'value':i});
+                
+                for(var j in classJSON[i]){
+                    //alert(classJSON[i][j]);
+                    tmpObj.push({"key":j,"value":classJSON[i][j]});
+                }
+                tmpObj.shift();
+                //console.log(JSON.stringify(tmpObj));
+                _class[i]=tmpObj;
+                tmpObj=[{}];
+            }
+            data.shift()
+            
+        var up1Data = data[0], up2Data =_class[data[0].key];
+            selectYes.addEventListener('click', function() {
+                //animaed.finish();
+                if(slideFlag==false){
+                    $("#classID").val(up2Data[0].key);
+                    $("#className").val(up1Data.key+"年"+up2Data[0].value);
+                }
+                
+
+                $("#region-picker").css("display","none");
+                console.log(up1Data);
+                console.log(up2Data);
+
+                if (!up1Data && up) {
+                    up.UPSelectRowIndexPath(1).UPThen(function(indexPath, value) {
+                        console.log(value);
+                        alert(value);
+                    })
+                };
+            })
+            selectClose.addEventListener('click', function() {
+                animaed.finish();
+            })
+            pickerCreate.addEventListener('click', function() {
+                $("#region-picker").css("display","block");
+                var course=up2Data;
+                up = UIPickerView.createPickerView({
+                    dataSource : data,
+                    id : 'provincePicker',
+                    constraintsId : 'wower',
+                    kUP : {
+                        kUPCELLHEIGHT : 26,
+                        kUPFRICTION : 0.003
+                    },
+                    valueChange : function(data) {
+                        slideFlag=true;
+                        up1Data = data;
+                        var k=up1Data.key;
+                        course=_class[k];
+                        // alert(JSON.stringify(up1Data));
+                        // alert(JSON.stringify(up2Data));
+                        $("#classID").val(course[0].key);
+                        $("#className").val(up1Data.value+"年"+course[0].value);
+                        up1=upData(course);
+                    }
+                });
+                up1=upData(course);
+                animaed = CAAnimation.createAnimation({
+                    id : 'region-picker'
+                });
+                animaed.start();
+            });
+            function upData(course){
+                up1 = UIPickerView.createPickerView({
+                    dataSource : course,
+                    id : 'cityPicker',
+                    constraintsId : 'wower1',
+                    kUP : {
+                        kUPCELLHEIGHT : 26,
+                        kUPFRICTION : 0.003
+                    },
+                    valueChange : function(data) {
+                        slideFlag=true;
+                        up2Data = data;
+                        $("#classID").val(up2Data.key);
+                        $("#className").val(up1Data.value+"年"+up2Data.value);
+                    }
+                });
+                return up1;
+            }
+            function UrlDecode(zipStr){  
+    var uzipStr="";  
+    for(var i=0;i<zipStr.length;i++){  
+        var chr = zipStr.charAt(i);  
+        if(chr == "+"){  
+            uzipStr+=" ";  
+        }else if(chr=="%"){  
+            var asc = zipStr.substring(i+1,i+3);  
+            if(parseInt("0x"+asc)>0x7f){  
+                uzipStr+=decodeURI("%"+asc.toString()+zipStr.substring(i+3,i+9).toString());  
+                i+=8;  
+            }else{  
+                uzipStr+=AsciiToString(parseInt("0x"+asc));  
+                i+=2;  
+            }  
+        }else{  
+            uzipStr+= chr;  
+        }  
+    }  
+  
+    return uzipStr;  
+}  
+  
+function StringToAscii(str){  
+    return str.charCodeAt(0).toString(16);  
+}  
+function AsciiToString(asccode){  
+    return String.fromCharCode(asccode);  
+}
+        </script>
+</body>
+</html>

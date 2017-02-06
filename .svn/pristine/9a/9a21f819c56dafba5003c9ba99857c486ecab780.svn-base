@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/aui.2.0.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/aui-flex.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/sign.css" />
+
+    <script style="text/javascript" src="__PUBLIC__/Home/js/jquery-2.2.2.min.js"></script>
+    <script style="text/javascript" src="__PUBLIC__/Home/js/common.js"></script>
+    <script style="text/javascript" src="__PUBLIC__/static/layer/layer.js"></script>
+    <title>MBA</title>
+    <style>
+        body{
+            background:url("__PUBLIC__/Home/image/ysd.png");
+            background-size: 100%;
+            background-position: 50%;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+    var w=$(window).width();
+    var h=$(window).height();
+    $("body").width(w).height(h);
+    </script>
+</body>
+</html>

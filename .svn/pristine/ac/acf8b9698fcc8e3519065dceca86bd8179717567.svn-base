@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/aui.2.0.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/aui-flex.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/style.css" />
+
+    <script style="text/javascript" src="__PUBLIC__/Home/js/jquery-2.2.2.min.js"></script>
+    <script style="text/javascript" src="__PUBLIC__/Home/js/common.js"></script>
+    <script style="text/javascript" src="__PUBLIC__/static/layer/layer.js"></script>
+    <title>选课</title>
+    <style>
+        body{padding-bottom:3.1rem;}
+    </style>
+</head>
+<body pages start="2" success="returnfunc"  action="{:U('Choice/ajaxClass')}" page-keyword="{$keyword}">
+    <div class="aui-searchbar" id="search">
+        <div class="aui-border-radius search-input" tapmode >
+            <i class="aui-iconfont aui-icon-search"></i>
+             <form action="" method="get">
+              <input type="hidden" name="s" value="/Home/Choice/index/">
+              <input type="search" placeholder="请输入搜索内容" id="search-input" name="keyword" value="{$keyword}">
+              <button type="submit" id="geter" style="display:none;">搜索</button>
+            </form>
+        </div>
+        <div class="aui-searchbar-cancel" tapmod>取消</div>
+    </div>
+
+  <!--   <form action="" method="get">
+       <input type="text" name="s" value="/Home/Choice/index/">
+        <input type="text" name="keyword">
+        <button type="submit">搜索</button>
+    </form> -->
+<!--    课程列表开始-->
+  <volist name="lists" id="v">
+    <div class="aui-flex-col course-list">
+        <img src="__PUBLIC__/Home/image/Bitmap.png" alt="">
+        <div class="aui-flex-item-10 aui-flex-row">
+            <div class="course-name" >{$v.subject_name}({$v.teacher_name}/{$v.subject_score}学分)</div>
+            <div class="course-info aui-ellipsis-1">
+              <div class="course-time aui-pull-left">学时：{$v.subject_time}</div>
+              <div class="study-time aui-pull-right down" data="{$v.id}">上课时间</div>
+            </div>
+        </div>
+        <div class="aui-flex-item-2 course-btn">
+            <label>
+             <if condition="$v['subject_type'] eq 0">
+            <input onclick="doClick(this)" class="my-checkbox" id="{$v.id}" status="{$v.subject_type}" type="checkbox" time="{$v.subject_time}" credit="{$v.subject_score}"  <if condition="$v.check_box_status eq 1">checked="checked"</if>>选课
+            <elseif condition="$v['subject_type'] eq 1" />
+             已选
+            <elseif condition="$v['subject_type'] eq 2" />
+
+             已修
+            </if>   
+            </label>
+        </div>
+    </div>
+    <div class="aui-flex-col course-detail" id="course-{$v.id}">
+        <div class="aui-flex-item-10">
+            <volist name="v['class_hour']" id="vc">
+            <p><if condition="$key eq 0">上课时间：</if>{$vc.month}&nbsp;{$vc.start_time}-{$vc.end_time}&nbsp;{$vc.class_room_name}</p>
+            </volist>
+        </div>
+        <div class="aui-flex-item-2"></div>
+    </div>
+  </volist>  
+<!--    课程列表结束--> 
+<input name="ids" type="hidden" info="ids" >
+<!-- 底部已选列表 -->
+
+    <div class="selected-list">
+        <div class="selected-list-detail"></div>
+        <div class="selected-list-btn" poster="info" action="__SELF__">确定</div>
+    </div>
+  
+<!-- 底部已选列表 -->
+   
+   <!-- 底部菜单 -->
+    <include file="Public/footer" /> 
+<!-- 底部菜单 -->
+</body>
+<script>
+
+    //搜索特效
+    var searchBar = document.querySelector(".search-input");
+    var myCheckbox=document.querySelector(".my-checkbox");
+    var Mask=document.querySelector(".aui-mask");
+    if(searchBar){
+        searchBar.onclick = function(){
+            document.querySelector(".aui-searchbar-cancel").style.marginRight = 0;
+        }
+    }
+    document.querySelector(".aui-searchbar-cancel").onclick = function(){
+        this.style.marginRight = "-"+this.offsetWidth+"px";
+        document.getElementById("search-input").value = '';
+        document.getElementById("search-input").blur();
+    }
+    // function doSearch(){
+    //     var keyworlds=$("#search-input").val();
+    //     alert("搜索内容："+keyworlds);
+    // }
+
+    //选课相关
+    var coiurseNum=0;var courseTime=0;var courseCredit=0;var courseData={};
+       var ids =  [];
+
+
+
+function doClick(obj){
+     
+        $(".selected-list").css("visibility","visible");
+        //不要问我为什么用status来判断，checked不兼容！
+        var ctime=$(obj).attr("time");
+        //取出ID    
+        var id = $(obj).attr('id');
+
+        var credit=$(obj).attr("credit");
+        if($(obj).attr("status")==0){
+            $(obj).attr("status",1)
+            //推入数组
+            ids.push(id);
+            coiurseNum+=1;
+            courseTime+=parseInt(ctime);
+            courseCredit+=parseInt(credit);
+        }else{
+            $(obj).attr("status",0)
+             //排除数组
+             var index  = ids.indexOf(id);
+             // alert(index);
+             ids.splice(index,1);
+
+            coiurseNum-=1;
+            courseTime-=parseInt(ctime);
+            courseCredit-=parseInt(credit);
+             if(coiurseNum==0){
+                  $(".selected-list").css("visibility","hidden");
+             }
+        }
+         //加入input
+        $("input[name = 'ids']").val(ids);  
+        //将数据压入JSON
+        courseData.coiurseNum=coiurseNum;
+        courseData.courseTime=courseTime;
+        courseData.courseCredit=courseCredit;
+        //alert(JSON.stringify(courseData));
+        $(".selected-list-detail").html("已选："+coiurseNum+"门，学时："+courseTime+"，学分："+courseCredit+"分");
+
+   
+    }
+   
+    // $(".my-checkbox").on('click',function (){
+     
+    //     $(".selected-list").css("visibility","visible");
+    //     //不要问我为什么用status来判断，checked不兼容！
+    //     var ctime=$(this).attr("time");
+    //     //取出ID    
+    //     var id = $(this).attr('id');
+
+    //     var credit=$(this).attr("credit");
+    //     if($(this).attr("status")==0){
+    //         $(this).attr("status",1)
+    //         //推入数组
+    //         ids.push(id);
+    //         coiurseNum+=1;
+    //         courseTime+=parseInt(ctime);
+    //         courseCredit+=parseInt(credit);
+    //     }else{
+    //         $(this).attr("status",0)
+    //          //排除数组
+    //          var index  = ids.indexOf(id);
+    //          // alert(index);
+    //          ids.splice(index,1);
+
+    //         coiurseNum-=1;
+    //         courseTime-=parseInt(ctime);
+    //         courseCredit-=parseInt(credit);
+    //          if(coiurseNum==0){
+    //               $(".selected-list").css("visibility","hidden");
+    //          }
+    //     }
+    //      //加入input
+    //     $("input[name = 'ids']").val(ids);  
+    //     //将数据压入JSON
+    //     courseData.coiurseNum=coiurseNum;
+    //     courseData.courseTime=courseTime;
+    //     courseData.courseCredit=courseCredit;
+    //     //alert(JSON.stringify(courseData));
+    //     $(".selected-list-detail").html("已选："+coiurseNum+"门，学时："+courseTime+"，学分："+courseCredit+"分");
+
+   
+    // });
+
+
+//确定按钮
+    // $(".selected-list-btn").on('click',function (){
+    //     alert(JSON.stringify(courseData));
+    // });
+
+      
+
+     
+
+      $("#search-input").change(function(){
+         $("#geter").click();
+      })
+
+
+ function returnfunc(data){
+        var html = '';
+         for (key in data){
+            if (data[key].subject_type == 0) {
+             html +="<div class='aui-flex-col course-list'><img src='__PUBLIC__/Home/image/Bitmap.png' alt=''><div class='aui-flex-item-10 aui-flex-row'><div class='course-name'>"+data[key].subject_name+"("
+              +data[key].teacher_name+"/"+data[key].subject_score+"学分)</div><div class='course-info aui-ellipsis-1'><div class='course-time aui-pull-left'>学时："+data[key].subject_time+"</div><div class='study-time aui-pull-right down' data="+data[key].id+">上课时间</div></div></div><div class='aui-flex-item-2 course-btn'><label><input onclick='doClick(this)' class='my-checkbox' id="+data[key].id+" status="+data[key].subject_type+" type='checkbox' time="+data[key].subject_time+" credit="+data[key].subject_score+">选课</label></div></div><div class='aui-flex-col course-detail' id='course-"+data[key].id+"'><div class='aui-flex-item-10'>";
+            for(key1 in data[key].class_hour){
+              if (key1 == 0) {
+                html +=  "<p>上课时间："+data[key].class_hour[key1].month+"&nbsp;"+data[key].class_hour[key1].start_time+"-"+data[key].class_hour[key1].end_time+"&nbsp;"+data[key].class_hour[key1].class_room_name+"</p>";
+              }else{
+                html +=  "<p>"+data[key].class_hour[key1].month+"&nbsp;"+data[key].class_hour[key1].start_time+"-"+data[key].class_hour[key1].end_time+"&nbsp;"+data[key].class_hour[key1].class_room_name+"</p>";
+              }
+             
+            }
+
+            html+="</div><div class='aui-flex-item-2'></div></div>";
+        
+
+         
+            }else if (data[key].subject_type == 1){
+                html +="<div class='aui-flex-col course-list'><img src='__PUBLIC__/Home/image/Bitmap.png' alt=''><div class='aui-flex-item-10 aui-flex-row'><div class='course-name'>"+data[key].subject_name+"("
+              +data[key].teacher_name+"/"+data[key].subject_score+"学分)</div><div class='course-info aui-ellipsis-1'><div class='course-time aui-pull-left'>学时："+data[key].subject_time+"</div><div class='study-time aui-pull-right down' data="+data[key].id+">上课时间</div></div></div><div class='aui-flex-item-2 course-btn'><label>已选</label></div></div><div class='aui-flex-col course-detail' id='course-"+data[key].id+"'><div class='aui-flex-item-10'>";
+            for(key1 in data[key].class_hour){
+              if (key1 == 0) {
+                html +=  "<p>上课时间："+data[key].class_hour[key1].month+"&nbsp;"+data[key].class_hour[key1].start_time+"-"+data[key].class_hour[key1].end_time+"&nbsp;"+data[key].class_hour[key1].class_room_name+"</p>";
+              }else{
+                html +=  "<p>"+data[key].class_hour[key1].month+"&nbsp;"+data[key].class_hour[key1].start_time+"-"+data[key].class_hour[key1].end_time+"&nbsp;"+data[key].class_hour[key1].class_room_name+"</p>";
+              }
+             
+            }
+
+            html+="</div><div class='aui-flex-item-2'></div></div>";
+                 
+
+            }else if (data[key].subject_type == 2) {
+               html +="<div class='aui-flex-col course-list'><img src='__PUBLIC__/Home/image/Bitmap.png' alt=''><div class='aui-flex-item-10 aui-flex-row'><div class='course-name'>"+data[key].subject_name+"("
+              +data[key].teacher_name+"/"+data[key].subject_score+"学分)</div><div class='course-info aui-ellipsis-1'><div class='course-time aui-pull-left'>学时："+data[key].subject_time+"</div><div class='study-time aui-pull-right down' data="+data[key].id+">上课时间</div></div></div><div class='aui-flex-item-2 course-btn'><label>已修</label></div></div><div class='aui-flex-col course-detail' id='course-"+data[key].id+"'><div class='aui-flex-item-10'>";
+            for(key1 in data[key].class_hour){
+              if (key1 == 0) {
+                html +=  "<p>上课时间："+data[key].class_hour[key1].month+"&nbsp;"+data[key].class_hour[key1].start_time+"-"+data[key].class_hour[key1].end_time+"&nbsp;"+data[key].class_hour[key1].class_room_name+"</p>";
+              }else{
+                html +=  "<p>"+data[key].class_hour[key1].month+"&nbsp;"+data[key].class_hour[key1].start_time+"-"+data[key].class_hour[key1].end_time+"&nbsp;"+data[key].class_hour[key1].class_room_name+"</p>";
+              }
+             
+            }
+
+            html+="</div><div class='aui-flex-item-2'></div></div>";
+
+            }
+         }
+       
+         $("body").append(html);
+    }
+//上课时间
+
+// $(document).delegate('.radio label','click',function() {});
+
+
+ $(document).delegate('.study-time','click',function() {
+       if( $(this).hasClass("down")){
+            $(".course-list").css("marginBottom","0")
+            $(this).removeClass("down");
+            $(this).addClass("up");
+        }else{
+            $(this).removeClass("up");
+            $(this).addClass("down");
+        }
+        var courseId=$(this).attr("data");
+        $("#course-"+courseId).toggle();
+    });
+
+    // $(".study-time").on('click',function() {
+    //    if( $(this).hasClass("down")){
+    //         $(".course-list").css("marginBottom","0")
+    //         $(this).removeClass("down");
+    //         $(this).addClass("up");
+    //     }else{
+    //         $(this).removeClass("up");
+    //         $(this).addClass("down");
+    //     }
+    //     var courseId=$(this).attr("data");
+    //     $("#course-"+courseId).toggle();
+    // });
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+

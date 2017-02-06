@@ -1,0 +1,64 @@
+#goodcover {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 133%;
+	background-color: black;
+	z-index: 1001;
+	-moz-opacity: 0.8;
+	opacity: 0.50;
+	filter: alpha(opacity=80);
+}
+#code {
+	width: 367px;
+	height: 800px;
+	
+	padding: 10px;
+	position: absolute;
+	display: none;
+	left: 45%;
+	z-index: 1002;
+	filter: alpha(opacity=80);
+}
+.close1 {
+	width: 367px;
+	height: 60px;
+}
+#closebt {
+	float: right;
+}
+#closebt img {
+	width: 20px;
+}
+.goodtxt {
+	text-align: left;
+	margin-top: 150px;
+	margin-left: 30px;
+
+}
+.goodtxt p {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	color: #ccc;
+
+}
+.code-img {
+	width: 337px;
+	margin: 30px auto 0 auto;
+	padding: 10px;
+}
+
+
+.mobile-width {
+    
+    margin: 0 auto;
+    
+    width: 337px;
+    margin-top: 40px;
+    background: url(default/bgm.png) no-repeat 0 -2217px;
+	background-color:rgba(0,0,0);
+	
+}

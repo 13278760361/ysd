@@ -1,0 +1,234 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>添加课程</h2>
+    </div>
+    <form action="{:U('ClassHour/adds')}" method="post" class="form-horizontal">
+    <input type="hidden" name='subject_id' value="{$_GET['subject_id']}"/>
+        <div class="form-item">
+           <label class="item-label">课程名:{$subject_name}</label>
+        </div> 
+
+        <div class="form-item e">
+            <label class="item-label">授课老师</label>
+            <select name="teacher_id">
+            <option value="">请选择</option>
+            <volist name="teachers" id="vo">
+                <option value="{$vo['id']}">{$vo['teacher_name']}</option>
+            </volist>    
+            </select> 
+        </div> 
+        <div class="form-item">
+            <label class="item-label">上课教室</label>
+            <select name="class_room_id">
+            <option value="">请选择</option>
+            <volist name="class_room" id="vo">
+                <option value="{$vo['id']}">{$vo['class_room_name']}</option>
+            </volist>    
+            </select> 
+        </div>
+
+       <div class="form-item">
+            <label class="item-label">开始时间</label>
+        <input type="text" name="start_time" class="text time" placeholder="请选择时间" />
+       </div>
+       <div class="form-item">
+            <label class="item-label">结束时间</label>
+        <input type="text" name="end_time" class="text time" placeholder="请选择时间" />
+       </div>
+
+    <!-- <div class="form-item">
+            <label class="item-label">排序</label>
+        <input type="text" name="sort" class="text input-small" value="{$data['sort']}" />
+       </div>-->
+       <label class="item-label"><a href="javascript:;" nctype="add_sv">点击添加课时</a><span style="color:red; font-size:11px">(没有课可以不用填)</span></label>
+       <!--按天数添加课时
+       <div class="r-am">
+            <div class = "row">
+                <div class="form-item col-md-6">
+                    <label class="item-label">上午开始时间</label>
+                    <input type="text" name="time_s[am][1][start]" class="text pma" placeholder="请选择开始时间" />
+                </div>
+                <div class="form-item col-md-6">
+                    <label class="item-label">上午结束时间</label>
+                    <input type="text" name="time_s[am][1][end]" class="text pma" placeholder="请选择结束时间" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-item col-md-6">
+                    <label class="item-label">下午开始时间</label>
+                    <input type="text" name="time_s[pm][1][start]" class="text pma" placeholder="请选择开始时间" />
+                </div>
+                <div class="form-item col-md-6">
+                    <label class="item-label">下午结束时间</label>
+                    <input type="text" name="time_s[pm][1][end]" class="text pma" placeholder="请选择结束时间" />
+                </div>
+            </div>
+        </div>-->
+        <!--按周添加课时-->
+        <div class="r-am">
+            <div class = "row">
+                <div class="form-item col-md-6">
+                    <label class="item-label">上午开始时间</label>
+                    <input type="text" name="time_s[am][1][start]" class="text pma" placeholder="请选择周一上午上课时间" />
+                    <input type="text" name="time_s[am][1][up_time]" class="text" placeholder="请填写上课提前时间默认30分钟" />
+                </div>
+                <div class="form-item col-md-6">
+                    <label class="item-label">上午结束时间</label>
+                    <input type="text" name="time_s[am][1][end]" class="text pma" placeholder="请选择周一上午下课课时间" />
+                    <input type="text" name="time_s[am][1][down_time]" class="text" placeholder="请填写下课延长时间默认30分钟" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-item col-md-6">
+                    <label class="item-label">下午开始时间</label>
+                    <input type="text" name="time_s[pm][1][start]" class="text pma" placeholder="请选择周一下午上课时间" />
+                    <input type="text" name="time_s[pm][1][up_time]" class="text" placeholder="请填写上课提前时间如30" />
+                </div>
+                <div class="form-item col-md-6">
+                    <label class="item-label">下午结束时间</label>
+                    <input type="text" name="time_s[pm][1][end]" class="text pma" placeholder="请选择周一下午下课课时间" />
+                    <input type="text" name="time_s[pm][1][down_time]" class="text" placeholder="请填写下课延长时间默认30分钟" />
+                </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class="form-item">
+                <input type="text" hidden="hidden" name="datas"/>
+                <textarea hidden="hidden" name="datas"></textarea>
+                <button class="btn submit-btn ajax-post" id="submit" type="button" target-form="form-horizontal">确 定</button>
+                
+                <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+            </div>
+        </div>
+    </form>
+</block>
+<block name="script">
+<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        //导航高亮
+        
+        highlight_subnav('{:U('Subjects/index')}');
+        //获取相同html内容
+        var html = $('.e').html();
+        
+$(function(){
+    $('.date').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    $('.time').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        startView:2,
+        autoclose:true,
+       // daysOfWeekDisabled:[0,6]
+    });
+   newTime();
+}) ;
+// 添加课时 
+    var i = 2;  // 自增，防止冲突
+    var j = 0; //添加课时标识
+    var sweet = '';
+    $('a[nctype="add_sv"]').click(function(){
+        //alert($('input[name="start_time"]').val());
+       // alert(new Date($('input[name="start_time"]').val()).getDay());
+       switch(i){
+        case 2:
+            sweet = '二';
+        break;
+        case 3:
+            sweet = '三';
+        break;
+        case 4:
+            sweet = '四';
+        break;
+        case 5:
+            sweet = '五';
+        break;
+        case 6:
+            sweet = '六';
+        break;
+        case 7:
+            sweet = '日';
+        break;
+       }
+        var strtime = $('input[name="start_time"]').val();
+        var endtime = $('input[name="end_time"]').val();
+        var st = replcTime(strtime);
+        var et = replcTime(endtime);
+        var ss = (et-st)/3600000/24;
+        var _tr = $('.r-am');
+
+          var r = true;
+        if(i>5){
+        
+            if (confirm("周末是否有课")){
+              r = true;
+            }else{
+              r = false;
+            }
+        }
+        if(ss >= 1 && i<=7 && r){
+        $('<div class="new"><div class = "row">                <div class="form-item col-md-6">                    <label class="item-label">上午开始时间</label>                    <input type="text" name="time_s[am]['+i+'][start]" class="text pma" placeholder="请选择周'+sweet+'上午上课时间" /> <input type="text" name="time_s[am]['+i+'][up_time]" class="text" placeholder="请填写上课提前时间默认30分钟" />               </div>                <div class="form-item col-md-6">                    <label class="item-label">上午结束时间</label>                    <input type="text" name="time_s[am]['+i+'][end]" class="text pma" placeholder="请选择周'+sweet+'上午下课时间" /> <input type="text" name="time_s[am]['+i+'][down_time]" class="text" placeholder="请填写下课延长时间默认30分钟" />               </div>            </div>            <div class="row">                <div class="form-item col-md-6">                    <label class="item-label">下午开始时间</label>                    <input type="text" name="time_s[pm]['+i+'][start]" class="text pma" placeholder="请选择周'+sweet+'下午上课时间" /> <input type="text" name="time_s[pm]['+i+'][up_time]" class="text" placeholder="请填写上课提前时间默认30分钟" />               </div>                <div class="form-item col-md-6">                    <label class="item-label">下午结束时间</label>                    <input type="text" name="time_s[pm]['+i+'][end]" class="text pma" placeholder="请选择周'+sweet+'下午下课时间" /> <input type="text" name="time_s[pm]['+i+'][down_time]" class="text" placeholder="请填写下课延长时间默认30分钟" />               </div>            </div><span class="nscs"><a href="javascript:void(0);" class="btn-orange"><i class="icon-minus-sign"></i><p>移除</p></a></span></div>').appendTo(_tr);   //上午
+        $('.nscs').find('a').click(function(){
+            $(this).parents('div:first').remove();
+            i=2;  //初始化
+            j--;
+            if(j==-1){
+                j=0;
+            }
+        });
+       // alert(j);
+         i++;
+         j++;
+     }else{
+        alert('添加课时失败，请检查你的开始时间与结束时间！');
+        return false;
+
+     }
+        newTime('+'+j);
+    });
+    function replcTime(val){
+        var date = new Date(val); //传入一个时间格式，如果不传入就是获取现在的时间了，这样做不兼容火狐。
+        // 可以这样做
+        var date = new Date(val.replace('/-/g', '/'));
+        return Date.parse(date);
+    }
+    function newTime(ret){
+         //重新初始化datetimepicker
+        $('.pma').datetimepicker({
+            startDate:ret+'d',
+            format: 'hh:ii',
+            language:"zh-CN",
+            minView:0,
+            startView:1,
+            autoclose:true,
+            showMeridian:1,
+            //todayBtn:true
+          //  daysOfWeekDisabled:[0,6]
+        });
+    }
+    $("#submit").click(function(){
+        var len = $('.col-md-6');
+       // var ipt = ;
+        var data = "";
+        for(var i=1;i<=len.length/4;i++){
+            data+="{am_start:'"+$('.col-md-6').find("input[name='time_s[am]["+i+"][start]']").val()+"',am_end:'"+$('.col-md-6').find("input[name='time_s[am]["+i+"][end]']").val()+"',pm_start:'"+$('.col-md-6').find("input[name='time_s[pm]["+i+"][start]']").val()+"',pm_end:'"+$('.col-md-6').find("input[name='time_s[pm]["+i+"][end]']").val()+"',up_a_time:'"+$('.col-md-6').find("input[name='time_s[am]["+i+"][up_time]']").val()+"',down_a_time:'"+$('.col-md-6').find("input[name='time_s[am]["+i+"][down_time]']").val()+"',up_p_time:'"+$('.col-md-6').find("input[name='time_s[pm]["+i+"][up_time]']").val()+"',down_p_time:'"+$('.col-md-6').find("input[name='time_s[pm]["+i+"][down_time]']").val()+"'},";
+        }
+        
+       data = data.substring(0,data.length-1);
+       datas="["+data+"]";
+       $("textarea[name='datas']").text(datas);
+       $(this).attr('type','submit');
+    });
+    </script>
+</block>

@@ -1,0 +1,29 @@
+  <div class="bottom-menu aui-flex-col">
+       <div class="aui-flex-item-2 index-menu">
+           <a href="http://mba.ynnu.edu.cn/">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+       </div>
+       <div class="aui-flex-col aui-flex-item-10 menu-list">
+           <div class="aui-flex-item-4 aui-flex-middle sign-menu">
+               <i>&nbsp;</i>课程.签到
+               <div class="sing-menu-list">
+                   <p><a href="{:U('Sign/index')}">签到信息</a></p>
+                   <p><a href="{:U('Choice/index')}">课程信息</a></p>
+               </div>
+               <div class="sing-menu-list-arrow"></div>
+           </div>
+           <div class="aui-flex-item-4 aui-flex-middle"><a href="{:U('Img/index')}">MBA</a></div>
+           <div class="aui-flex-item-4 aui-flex-middle"><a href="{:U('Center/index')}">个人中心</a></div>    
+       </div>
+   </div>
+   <script>
+    //菜单
+    $(".sign-menu").on("click",function (){
+        var display=$(".sing-menu-list").css("display");
+        if(display=="none"){
+            $(".sing-menu-list").css("display","block");
+        }else{
+            $(".sing-menu-list").css("display","none");
+        }
+        
+    });
+   </script>
